@@ -32,17 +32,7 @@
             <td>${product.productName}</td>
             <td>${product.productType}</td>
             <td>${product.price}</td>
-            <td>${product.description}</td>    
-            <sec:authorize access= "hasRole('ADMIN')">
-            
-            <td><a href="/products/update">edit</a></td> 
-            <td>
-             <c:url var="deleteProduct" value="/products/delete/${product.id}"/>
-             <form action="${deleteProduct}" method="post">
-		      <button type="submit">Delete</button>
-	         </form>
-	         </td>
-            </sec:authorize>      
+            <td>${product.description}</td>               
 		  </tr>
 		</c:forEach>
 		</table>

@@ -18,7 +18,10 @@
 	  <br>
 	  <br>
 	 <sec:authorize access= "hasRole('ADMIN')">
-	<a href="<c:url value="/products" />">List Product</a> <br>
+	<a href="<c:url value="/products/" />">List Product</a> <br>
+	<a href="<c:url value="/products/addProduct" />">Add Product</a> <br>
+	<a href="<c:url value="/products/" />">List Person</a> <br>
+	<a href="<c:url value="/products/addProduct" />">Add Person</a> <br>
 	</sec:authorize>
 	<sec:authorize access= "hasRole('USER')">
 	<a href="<c:url value="/persons" />">List Person</a><br>	

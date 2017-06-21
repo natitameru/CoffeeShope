@@ -15,14 +15,13 @@
 		<a href="<c:url value="/logout" />"> LogOut </a> 
 		<br> 
 		
+		<c:url var="addProductUrl" value="/products/productAdd"/>
+		<form action="${addProductUrl}" method="post">
 		
-		<form action="/product/create" method="post">
-		
-		
-		<p>Product Name: <input type="text" name="productName"></p>
-		<p>Description: <textArea rows="20" cols="30" name="description"></textArea></p>
-		<p>Price $: <input type="text" name="price"></p>
-		<p>Product Type: <input type="text" name="productType" ></p>
+		<p>Product Name: <input type="text" name="productName" value="${product.productName}"></p>
+		<p>Description:: <input type="text" name="description" value="${product.description}"></p>
+		<p>Price $: <input type="text" name="price" value="${product.price}"></p>
+		<p>Product Type: <input type="text" name="productType" value="${product.productType}"></p>
 		<p> <input type="submit" value="Create Product"></p>
 		
 		</form>
@@ -31,7 +30,7 @@
 		
 		
 		
-		<a href="<c:url value="/products/manage" />"> Back </a>
+		<a href="<c:url value="/home" />"> Back </a>
 		
 </body>
 </html>

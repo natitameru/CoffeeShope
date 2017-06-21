@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import edu.mum.coffee.domain.Person;
+import edu.mum.coffee.domain.Product;
 import edu.mum.coffee.repository.PersonRepository;
 
 @Service
@@ -30,6 +31,9 @@ public class PersonService {
 
 	public void removePerson(Person person) {
 		personRepository.delete(person);
+	}
+	public List<Person> getAllProduct() {
+		return  personRepository.findAll() ;
 	}
 
 }

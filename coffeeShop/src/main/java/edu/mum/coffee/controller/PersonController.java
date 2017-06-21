@@ -12,18 +12,19 @@ import edu.mum.coffee.service.PersonService;
 
 
 @Controller
+@RequestMapping("/persons")
 public class PersonController {
 
 	@Autowired
 	   private PersonService personService;
 	   
-	   @RequestMapping(value="/persons/{id}", method=RequestMethod.GET)
-	   public String getAllProduct(@PathVariable Long id ,Model model){
-		   model.addAttribute("persons",personService.findById(id));
-		   return "listOfProduct";
+	   @RequestMapping(value="/", method=RequestMethod.GET)
+	   public String getAllPerson(Model model){
+		   model.addAttribute("persons",personService.getAllProduct());
+		   return "listOfPersons";
 	   }
 
-	   @RequestMapping(value="/person", method=RequestMethod.POST)
+	   @RequestMapping(value="/addPerson", method=RequestMethod.POST)
 	   public String createPerson(Person person){
 		   personService.savePerson(person);
 		   return "redirect:/persons";
