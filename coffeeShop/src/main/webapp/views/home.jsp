@@ -11,38 +11,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-	You can choose any presentation framework that could be integrated with
-	Spring
-	<p>
-	<p>
-		The only user is "<b>super</b>" and the password is "<b>pw</b>"
-	<p>
-		<a href="<c:url value="/login" />"> Login </a>
+	
+	<form>
+	<h1>Admin Page</h1> <a href="<c:url value="/logout" />">logout </a>	
 		
-		
-		<h2>List of products</h2>
-		<table>
-		  <tr>
-		  <td>Product Name</td>
-		  <td>Product Type</td>
-		  <td>Price</td>
-		  <td>Description</td>
-		 
-		  </tr>
-		  
-		   <c:forEach var="product" items="${products}"> 
-		  
-		  <tr>
-            <td>${product.productName}</td>
-            <td>${product.productType}</td>
-            <td>${product.price}</td>
-            <td>${product.description}</td>               
-
-		  </tr>
-		</c:forEach>
-		</table>
-		<br>
-		
+	  <br>
+	  <br>
+	 <sec:authorize access= "hasRole('ADMIN')">
+	<a href="<c:url value="/products" />">List Product</a> <br>
+	</sec:authorize>
+	<sec:authorize access= "hasRole('USER')">
+	<a href="<c:url value="/persons" />">List Person</a><br>	
+	</sec:authorize>
+		</form>
 		
 		
 		

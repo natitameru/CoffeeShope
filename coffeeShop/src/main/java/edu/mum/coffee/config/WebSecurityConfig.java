@@ -13,6 +13,20 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
+		http
+        .authorizeRequests()
+            .antMatchers("/", "/home", "/index").permitAll()
+            .antMatchers("/products/**").hasRole("ADMIN")
+            .antMatchers("/products").hasRole("USER")
+            .anyRequest().authenticated()
+            .and()
+        .formLogin().defaultSuccessUrl("/home")
+        	.permitAll()
+        	.and()
+        .logout()
+        	.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+        	.logoutSuccessUrl("/")
+            .permitAll();
 //        http
 //            .authorizeRequests()
 //                .antMatchers("/", "/home", "/index").permitAll()
@@ -29,6 +43,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-//		auth.inMemoryAuthentication().withUser("super").password("pw").roles("ADMIN");
+		auth.inMemoryAuthentication().withUser("admin").password("admin").roles("ADMIN");
+		auth.inMemoryAuthentication().withUser("user").password("user").roles("USER");
 	}
 }

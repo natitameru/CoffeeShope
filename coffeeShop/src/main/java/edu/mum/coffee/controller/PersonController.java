@@ -20,7 +20,7 @@ public class PersonController {
 	   @RequestMapping(value="/persons/{id}", method=RequestMethod.GET)
 	   public String getAllProduct(@PathVariable Long id ,Model model){
 		   model.addAttribute("persons",personService.findById(id));
-		   return "persons";
+		   return "listOfProduct";
 	   }
 
 	   @RequestMapping(value="/person", method=RequestMethod.POST)
