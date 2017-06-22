@@ -7,36 +7,40 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Persons List</title>
 </head>
-<body>	
+<body style="font-size: 20px;">	
 		 <a href="<c:url value="/logout" />">logout </a>	
 		<br> 
 		<br>		
-		<h2>List of persons</h2>
+		
 		<table>
+		<tr>
+				<td colspan="20" align="center"><h2>List of Person</h2></td>
+			</tr>
 		  <tr>
-		  <td>Person ID</td>
-		  <td>First Name</td>
-		  <td>Last Name</td>
-		  <td>Address</td>
-		  <td>Phone</td>
+		  <td colspan="10">Person ID</td>
+		  <td colspan="10">First Name</td>
+		  <td colspan="10">Last Name</td>
+		  <td colspan="10">Address</td>
+		  <td colspan="10">Phone</td>
 		 
 		  </tr>
 		  
 		   <c:forEach var="person" items="${persons}"> 
 
 		  <tr>
-		    <td>${person.id}</td>
-            <td>${person.firstName}</td>
-            <td>${person.lastName}</td>
-            <td>${person.address.city}&nbsb;${person.address.state}&nbsb;${person.address.country}&nbsb;${person.address.zipcode}
-            </td>
-            <td>${person.phone}</td>    
+		    <td colspan="10">${person.id}</td>
+            <td colspan="10">${person.firstName}</td>
+            <td colspan="10">${person.lastName}</td>
+            <td colspan="10">${person.address.city}${' '}${person.address.state}${' '}${person.address.country}${' '}${person.address.zipcode}
+            </td >
+            <td colspan="10">${person.phone}</td>    
             <sec:authorize access= "hasRole('ADMIN')">
             
-            <td>
+            <td colspan="10">
              <c:url var="deletePerson" value="/persons/delete/${person.id}"/>
              <form action="${deletePerson}" method="post">
 		      <button type="submit">Delete</button>

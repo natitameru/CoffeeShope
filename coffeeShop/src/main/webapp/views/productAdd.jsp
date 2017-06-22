@@ -7,10 +7,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Products List</title>
+<style type="text/css">
+    .container {
+        width: 500px;
+    }
+    .container input {
+        width: 100%;    
+    }
+    </style>
 </head>
-<body>	
+<body style="font-size: 25px;">	
+<div class="container">
 		<h1>Add a new product</h1>
 		<a href="<c:url value="/logout" />"> LogOut </a> 
 		<br> 
@@ -31,6 +41,6 @@
 		
 		
 		<a href="<c:url value="/home" />"> Back </a>
-		
+		</div>>
 </body>
 </html>

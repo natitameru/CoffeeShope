@@ -63,6 +63,10 @@ public class Order {
 		return quantity;
 	}
 
+	public void setOrderLines(List<Orderline> orderLines) {
+		this.orderLines = orderLines;
+	}
+
 	public double getTotalAmount() {
 		double totalAmount = 0;
 

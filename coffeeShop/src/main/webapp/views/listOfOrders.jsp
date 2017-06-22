@@ -7,10 +7,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>List of orders</title>
 </head>
-<body>
+<body style="font-size: 25px;">
 
 	<a href="<c:url value="/logout" />"> LogOut </a>
 	<br>
@@ -50,24 +51,6 @@
 			</c:forEach>
 		</table>
 	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	<br>

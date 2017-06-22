@@ -7,22 +7,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
-	You can choose any presentation framework that could be integrated with
-	Spring
+<body style="font-size: 25px;">
+	
+	
 	<p>
-	<p>
-		The only user is "<b>super</b>" and the password is "<b>pw</b>"
-	<p>
+		<h1>Welcome to the Coffee Shop</h1>
+	      <br/>
+	       <br/>
+	        <br/>
+	        <a href="<c:url value="/login" />"> Login </a><br/>
 	    <a href="<c:url value="/persons/addPerson" />"> Sign Up </a>
-		<a href="<c:url value="/login" />"> Login </a>
 		
 		
-		<h2>List of products</h2>
-		<table>
+		
+		<h2 ">List of products</h2>
+		<table style="width: 50%;" style="align: center;">
 		  <tr>
 		  <td>Product Name</td>
 		  <td>Product Type</td>
