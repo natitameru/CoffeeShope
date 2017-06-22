@@ -21,6 +21,24 @@ public class Person {
 	private Address address;
 	private String phone;
 	private boolean enable;
+	@OneToOne(cascade = CascadeType.ALL)
+	private UserCredential userCredential;
+	
+
+
+	public UserCredential getUserCredential() {
+		return userCredential;
+	}
+
+	public void setUserCredential(UserCredential userCredential) {
+		this.userCredential = userCredential;
+	}
+
+	@Override
+	public String toString() {
+		return "Person [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", address=" + address + ", phone=" + phone + ", enable=" + enable + "]";
+	}
 
 	public long getId() {
 		return id;

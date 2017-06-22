@@ -36,4 +36,9 @@ public class PersonService {
 		return  personRepository.findAll() ;
 	}
 
+	public List<Person> findAll() {
+		
+		return personRepository.findAll();
+	}
+
 }

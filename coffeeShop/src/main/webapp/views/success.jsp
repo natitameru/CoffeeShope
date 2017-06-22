@@ -8,22 +8,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Products List</title>
 </head>
-<body>
-	You can choose any presentation framework that could be integrated with
-	Spring
-	<p>
-	<p>
-		The only user is "<b>super</b>" and the password is "<b>pw</b>"
-	<p>
-	    <a href="<c:url value="/persons/addPerson" />"> Sign Up </a>
-		<a href="<c:url value="/login" />"> Login </a>
-		
-		
+<body>	
+		 <a href="<c:url value="/logout" />">logout </a>	
+		<br> 
+		<br>		
 		<h2>List of products</h2>
 		<table>
 		  <tr>
+		  <td>Product ID</td>
 		  <td>Product Name</td>
 		  <td>Product Type</td>
 		  <td>Price</td>
@@ -31,18 +25,22 @@
 		 
 		  </tr>
 		  
-		   <c:forEach var="product" items="${products}"> 
+		   <c:forEach var="OrderedProducts" items="${OrderedProducts}"> 
 		  
 		  <tr>
-            <td>${product.productName}</td>
-            <td>${product.productType}</td>
-            <td>${product.price}</td>
-            <td>${product.description}</td>               
-
+		    <td>${OrderedProducts.id}</td>
+            <td>${OrderedProducts.productName}</td>
+            <td>${OrderedProducts.productType}</td>
+            <td>${OrderedProducts.price}</td>
+            <td>${OrderedProducts.description}</td>    
+               
 		  </tr>
 		</c:forEach>
 		</table>
 		<br>
+		Total price to pay :<p>${totalPayment}</p>
+		<a href="<c:url value="/orders/pay" />"> pay </a>
+		<a href="<c:url value="/home" />"> Back </a>
 		
 		
 		

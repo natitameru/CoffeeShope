@@ -42,6 +42,15 @@
 		      <button type="submit">Delete</button>
 	         </form>
 	         </td>
+	         <td>
+	         <sec:authorize access="hasRole('USER')">
+			<c:url var="addTocart" value="/products/delete/${product.id}"/>
+             <form action="${addTocart}" method="post">
+		      <button type="submit">add to cart</button>
+	         </form>
+			<br>
+		</sec:authorize>
+	         </td>
             </sec:authorize>      
 		  </tr>
 		</c:forEach>

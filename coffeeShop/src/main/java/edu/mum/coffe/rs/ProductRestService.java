@@ -16,7 +16,7 @@ public class ProductRestService {
 	
 	@Autowired
 	private ProductService  productService;
-	@RequestMapping("/productsR")
+	@RequestMapping(value ="/productsR", method = RequestMethod.GET,produces ="application/json")
 	public List<Product> getAllProduct() {
 		return productService.getAllProduct();
 	}
