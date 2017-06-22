@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>List of Persons</title>
 </head>
-<body  style="font-size: 30px;">
+<body  style="font-size: 20px;">
 	<sec:authorize access="isAuthenticated()">
    User Name: <sec:authentication property="principal.username" />
 		</sec:authorize>

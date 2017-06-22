@@ -12,7 +12,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Admin User</title>
 </head>
-<body style="font-size: 30px;">
+<body style="font-size: 20px;">
 <security:authorize access="isAuthenticated()">
    User Name: <security:authentication property="principal.username" /> 
 </security:authorize>

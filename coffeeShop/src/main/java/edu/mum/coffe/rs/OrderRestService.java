@@ -15,6 +15,7 @@ import edu.mum.coffee.domain.Order;
 import edu.mum.coffee.service.OrderService;
 
 @RestController
+@RequestMapping("/or")
 public class OrderRestService {
 	
 	@Autowired

@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>List of orders</title>
 </head>
-<body style="font-size: 25px;">
+<body style="font-size: 20px;">
 
 	<a href="<c:url value="/logout" />"> LogOut </a>
 	<br>
@@ -56,7 +56,7 @@
 	<br>
 
 
-	<a href="<c:url value="/orders/manage" />"> Back </a>
+	<a href="<c:url value="/home" />"> Back </a>
 
 
 

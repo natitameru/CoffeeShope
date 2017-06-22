@@ -53,9 +53,8 @@ public class OrderController {
 		   return "redirect:/orders";
 	   }
 	@RequestMapping(value="/order", method=RequestMethod.GET)
-	   public String orderForm(Model model,Principal principal){
-		   Order newOrder=new Order();
-		   Orderline newOrederline=new Orderline();
+	   public String orderForm(Model model,Principal principal,Order newOrder,Orderline newOrederline){
+		
 		   newOrder.setPerson(personService.findByEmail(principal.getName()).get(0));
 		   newOrder.setOrderLines(list);
 		   model.addAttribute("newOrder",newOrder);
