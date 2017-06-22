@@ -22,31 +22,31 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable();
-//        .authorizeRequests()
-//            .antMatchers("/", "/persons/addPerson","/home", "/index").permitAll()
-//            .antMatchers("/products/**").hasRole("ADMIN")
-//            .antMatchers("/products").hasRole("USER")
-//            .anyRequest().authenticated()
-//            .and()
-//        .formLogin().defaultSuccessUrl("/home")
-//        	.permitAll()
-//        	.and()
-//        .logout()
-//        	.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-//        	.logoutSuccessUrl("/")
-//            .permitAll();
+		http.csrf().disable()
+        .authorizeRequests()
+            .antMatchers("/", "/persons/addPerson","/home", "/index").permitAll()
+            .antMatchers("/products/**").hasRole("ADMIN")
+            .antMatchers("/products").hasRole("USER")
+            .anyRequest().authenticated()
+            .and()
+        .formLogin().defaultSuccessUrl("/home")
+        	.permitAll()
+        	.and()
+        .logout()
+        	.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+        	.logoutSuccessUrl("/")
+            .permitAll();
 
     }
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 	
-//		auth.inMemoryAuthentication().withUser("admin").password("admin").roles("ADMIN");
-//		auth.inMemoryAuthentication().withUser("user").password("user").roles("USER");
-//		
-//		for(Person uc:personRepository.findAll()){			
-//		auth.inMemoryAuthentication().withUser(uc.getUserCredential().getUserName()).password(uc.getUserCredential().getPassword()).roles("USER");
-//		}
+		auth.inMemoryAuthentication().withUser("admin").password("admin").roles("ADMIN");
+		auth.inMemoryAuthentication().withUser("user").password("user").roles("USER");
+		
+		for(Person uc:personRepository.findAll()){			
+		auth.inMemoryAuthentication().withUser(uc.getUserCredential().getUserName()).password(uc.getUserCredential().getPassword()).roles("USER");
+		}
 	}
 }
